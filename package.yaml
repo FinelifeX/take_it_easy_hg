@@ -20,7 +20,26 @@ extra-source-files:
 description:         Please see the README on GitHub at <https://github.com/githubuser/take-it-easy-haskell-game#readme>
 
 dependencies:
-- base >= 4.7 && < 5
+  - base
+  - bytestring
+  - directory
+  - aeson
+  - text
+  - wai
+  - wai-cors
+  - wai-extra
+  - warp
+  - servant
+  - servant-server
+  - servant-client
+  - stm
+  - free
+  - transformers
+  - http-client
+  - QuickCheck
+  - smallcheck
+  - HUnit
+  - tasty
 
 library:
   source-dirs: src
