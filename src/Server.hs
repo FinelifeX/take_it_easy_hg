@@ -12,11 +12,12 @@ import Servant
 import Network.Wai
 import Network.Wai.Handler.Warp
 import Data.Text.Lazy ( Text, pack )
-
+--
+--Custom modules import
+import Datas
 import Middlewares
 --
 -- Route mapping
-Server.hs:
 type ServerAPI =
         Get '[JSON] Text
    :<|> "new_game" :> Get '[JSON] Field
