@@ -18,12 +18,14 @@ import Datas
 import Middlewares
 import Controllers.NewGameController ( newGame )
 import Controllers.GetCellsController ( getCells )
+import Controllers.GetFieldStateController ( getFieldState )
 --
 -- Route mapping
 type ServerAPI =
         Get '[JSON] Text
    :<|> "new_game" :> Get '[JSON] Field
    :<|> "get_cells" :> Get '[JSON] [Lines]
+   :<|> "get_field_state" :> Post '[JSON] Field
 --
 -- Route handlers
 serverRoutes :: Server ServerAPI
@@ -31,9 +33,13 @@ serverRoutes =
         home
    :<|> startNewGame
    :<|> return getCells
+   :<|> fieldState
   where
     home = return "Hello from Home"
     startNewGame = return newGame
+    fieldState = do
+              liftIO $ getFieldState
+          >>= return
 
 
 -- Server initialization
