@@ -16,6 +16,8 @@ import Data.Text.Lazy ( Text, pack )
 --Custom modules import
 import Datas
 import Middlewares
+import Controllers.NewGameController ( newGame )
+import Controllers.GetCellsController ( getCells )
 --
 -- Route mapping
 type ServerAPI =

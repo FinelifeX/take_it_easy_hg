@@ -1,4 +1,4 @@
-module Controllers.NewGameController (newGame) where
+module Controllers.NewGameController ( newGame ) where
 --
 import Datas
 
@@ -6,14 +6,6 @@ import Servant.Server.Internal.Handler
 --
 emptyLines :: Lines
 emptyLines = Lines 0 0 0
-
---cells' :: [Cell]
---cells' = generate [] 0 0 where
---  generate list 24 _  = list
---  generate list acc index =
---    if acc == 0 || acc == 1 || acc == 3 || acc == 4 || acc == 20 || acc == 24
---    then (Cell (-1) emptyLines) : generate list (acc + 1) index
---    else (Cell index emptyLines) : generate list (acc + 1) (index + 1)
 
 cells' :: [Cell]
 cells' = [
