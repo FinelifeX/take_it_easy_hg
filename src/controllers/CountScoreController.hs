@@ -37,13 +37,15 @@ countDown f center acc pos  =
   then countDown f 0 0 (-1)
   else countDown f center (acc+1) (getNextCellDown (getCell f pos))
 
+-- From up-right to down-left
 countLeft :: Field -> Integer -> Integer -> Integer -> Integer
 countLeft _ left acc (-1) = left * acc
 countLeft f left acc pos = 
   if getLeft (getCell f pos) /= left
   then countLeft f 0 0 (-1)
   else countLeft f left (acc + 1) (getNextCellLeftBottom $ getCell f pos)
-  
+
+-- From up-left to down-right
 countRight :: Field -> Integer -> Integer -> Integer -> Integer
 countRight _ right acc (-1) = right * acc
 countRight f right acc pos = 
@@ -67,7 +69,7 @@ countScoreLeft f =
   + countLeft f (getLeft $ getCell f 5) 0 5
   + countLeft f (getLeft $ getCell f 10) 0 10
   + countLeft f (getLeft $ getCell f 15) 0 15
-  
+
 countScoreRight :: Field -> Integer
 countScoreRight f =
   countRight f (getRight $ getCell f 0) 0 0
@@ -82,3 +84,6 @@ countCurrentScore f =
   countScoreCenter f
   + countScoreLeft f
   + countScoreRight f
+
+
+

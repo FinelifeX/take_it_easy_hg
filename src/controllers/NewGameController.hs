@@ -1,4 +1,5 @@
-module Controllers.NewGameController ( newGame ) where
+-- This controller returns initial field, with chained positions and no lines
+module Controllers.NewGameController (newGame) where
 --
 import Datas
 

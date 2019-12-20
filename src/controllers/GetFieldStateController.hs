@@ -5,7 +5,7 @@
 module Controllers.GetFieldStateController ( getFieldState ) where
 --
 import qualified Data.ByteString as B
-import           Control.Monad.IO.Class ( liftIO )
+import Control.Monad.IO.Class ( liftIO )
 import           Data.Aeson
 import           Datas
 --

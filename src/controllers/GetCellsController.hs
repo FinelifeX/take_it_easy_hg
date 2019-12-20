@@ -1,3 +1,4 @@
+-- Function that generates 27 cards for the game
 module Controllers.GetCellsController ( getCells ) where
 
 import Datas

@@ -1,3 +1,5 @@
+-- This controller updates current field state by saving it into a .json file.
+-- That made for not loosing game state after refreshing page.
 module Controllers.UpdateGridController ( updateGrid, respond ) where
 
 import GHC.Generics
